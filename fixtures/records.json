@@ -1,0 +1,20 @@
+[
+  {
+    "sourceId": "berth-windows-demo-1",
+    "source": "sample-source",
+    "observedAt": "2026-11-16T09:00:00Z",
+    "label": "靠泊计划",
+    "attributes": {
+      "sample": true
+    }
+  },
+  {
+    "sourceId": "berth-windows-demo-2",
+    "source": "sample-source",
+    "observedAt": "2026-11-16T09:05:00Z",
+    "label": "靠泊计划 2",
+    "attributes": {
+      "sample": true
+    }
+  }
+]
