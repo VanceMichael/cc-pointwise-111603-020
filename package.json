@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node --test",
     "start": "node src/cli.js",
-    "demo": "node src/demo.js"
+    "demo": "node src/demo.js",
+    "acceptance": "node src/acceptance.js"
   },
   "engines": {
     "node": ">=22"

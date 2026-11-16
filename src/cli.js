@@ -6,7 +6,11 @@ import { CollectionService } from './service.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const service = new CollectionService(new RecordRepository(resolve(here, '../var/records.json')));
-const action = process.argv[2] ?? 'query';
+const action = process.argv[2] ?? '--help';
+if (action === '--help' || action === '-h') {
+  console.log(JSON.stringify({usage: 'npm start -- ingest [文件] | query [来源]', commands: ['ingest', 'query']}));
+  process.exit(0);
+}
 if (action === 'ingest') {
   const records = JSON.parse(await readFile(process.argv[3] ?? resolve(here, '../fixtures/records.json'), 'utf8'));
   console.log(JSON.stringify(await service.ingest(records), null, 2));
