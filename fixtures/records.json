@@ -1,20 +1,19 @@
 [
   {
-    "sourceId": "berth-windows-demo-1",
-    "source": "sample-source",
-    "observedAt": "2026-11-16T09:00:00Z",
-    "label": "靠泊计划",
+    "sourceId": "W1",
+    "source": "港口窗口计划簿",
+    "observedAt": "2026-11-16T08:00:00Z",
+    "label": "Local Dawn",
     "attributes": {
-      "sample": true
-    }
-  },
-  {
-    "sourceId": "berth-windows-demo-2",
-    "source": "sample-source",
-    "observedAt": "2026-11-16T09:05:00Z",
-    "label": "靠泊计划 2",
-    "attributes": {
-      "sample": true
+      "sourceWindowId": "W1",
+      "source": "port",
+      "vesselId": "IMO-LOCAL-1",
+      "vesselName": "Local Dawn",
+      "berth": "B1",
+      "startsAt": "2026-11-17T00:00:00Z",
+      "endsAt": "2026-11-17T02:00:00Z",
+      "state": "scheduled",
+      "modifiedAt": "2026-11-16T08:00:00Z"
     }
   }
 ]

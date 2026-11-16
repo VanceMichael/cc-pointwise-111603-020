@@ -1,0 +1,60 @@
+{
+  "stages": {
+    "opening": {
+      "routes": {
+        "/ports/P1/windows": {
+          "contentType": "text/html; charset=utf-8",
+          "body": "<!doctype html><html><body><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"W1\", \"source\": \"port\", \"vesselId\": \"IMO-LOCAL-1\", \"vesselName\": \"Local Dawn\", \"berth\": \"B1\", \"startsAt\": \"2026-11-17T00:00:00Z\", \"endsAt\": \"2026-11-17T02:00:00Z\", \"state\": \"scheduled\", \"modifiedAt\": \"2026-11-16T08:00:00Z\"}</script></body></html>",
+          "etag": "\"opening\""
+        },
+        "/agents/windows": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "sourceWindowId": "A7",
+                "source": "agent",
+                "vesselId": null,
+                "vesselName": "Local Dawn",
+                "berth": "B1",
+                "startsAt": "2026-11-17T01:00:00Z",
+                "endsAt": "2026-11-17T03:00:00Z",
+                "state": "scheduled",
+                "modifiedAt": "2026-11-16T08:00:00Z"
+              }
+            ],
+            "next": null
+          }
+        }
+      }
+    },
+    "updated": {
+      "routes": {
+        "/ports/P1/windows": {
+          "contentType": "text/html; charset=utf-8",
+          "body": "<!doctype html><html><body><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"W1\", \"source\": \"port\", \"vesselId\": \"IMO-LOCAL-1\", \"vesselName\": \"Local Dawn II\", \"berth\": \"B2\", \"startsAt\": \"2026-11-17T01:00:00Z\", \"endsAt\": \"2026-11-17T03:00:00Z\", \"state\": \"cancelled\", \"modifiedAt\": \"2026-11-16T09:00:00Z\"}</script></body></html>",
+          "etag": "\"updated\""
+        },
+        "/agents/windows": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "sourceWindowId": "A7",
+                "source": "agent",
+                "vesselId": null,
+                "vesselName": "Local Dawn",
+                "berth": "B1",
+                "startsAt": "2026-11-17T01:00:00Z",
+                "endsAt": "2026-11-17T03:00:00Z",
+                "state": "scheduled",
+                "modifiedAt": "2026-11-16T08:00:00Z"
+              }
+            ],
+            "next": null
+          }
+        }
+      }
+    }
+  }
+}
