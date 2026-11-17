@@ -27,3 +27,11 @@ test('port source preserves vessel identity while changing name, berth and cance
   assert.equal(cancelled.state, 'cancelled');
   assert.equal((await fixture('identity'))[0].sourceWindowId, initial.sourceWindowId);
 });
+
+test('restore and temporary delay are distinct source states, not new windows', async () => {
+  const restored = (await observe('restored')).records[0].attributes;
+  const delayed = (await observe('delayed')).records[0].attributes;
+  assert.equal(restored.sourceWindowId, delayed.sourceWindowId);
+  assert.equal(restored.state, 'restored');
+  assert.equal(delayed.state, 'delayed');
+});

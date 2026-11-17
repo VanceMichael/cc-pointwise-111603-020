@@ -4,5 +4,12 @@
     "sourceWindowId": "W1",
     "vesselId": "IMO-LOCAL-1",
     "confirmedBy": "dispatcher-local"
+  },
+  {
+    "source": "agent",
+    "sourceWindowId": "A7",
+    "vesselId": "IMO-LOCAL-1",
+    "confirmedBy": "dispatcher-local",
+    "note": "agent page carries no vesselId; identity checked against the port berth plan"
   }
 ]

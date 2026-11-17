@@ -1,0 +1,18 @@
+{
+  "stages": {
+    "opening": {
+      "routes": {
+        "/ports/P2/windows": {
+          "contentType": "text/html; charset=utf-8",
+          "body": "<!doctype html><html><body><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"P2-1\", \"source\": \"port\", \"vesselId\": \"IMO-P2-1\", \"vesselName\": \"Page One\", \"berth\": \"B4\", \"startsAt\": \"2026-11-18T00:00:00Z\", \"endsAt\": \"2026-11-18T02:00:00Z\", \"state\": \"scheduled\", \"modifiedAt\": \"2026-11-16T08:00:00Z\"}</script><a rel=\"next\" href=\"/ports/P2/windows?page=2\">next</a></body></html>",
+          "etag": "\"p2-1\""
+        },
+        "/ports/P2/windows?page=2": {
+          "contentType": "text/html; charset=utf-8",
+          "body": "<!doctype html><html><body><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"P2-2\", \"source\": \"port\", \"vesselId\": \"IMO-P2-2\", \"vesselName\": \"Page Two\", \"berth\": \"B5\", \"startsAt\": \"2026-11-18T04:00:00Z\", \"endsAt\": \"2026-11-18T06:00:00Z\", \"state\": \"scheduled\", \"modifiedAt\": \"2026-11-16T08:00:00Z\"}</script></body></html>",
+          "etag": "\"p2-2\""
+        }
+      }
+    }
+  }
+}
