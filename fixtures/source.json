@@ -55,6 +55,153 @@
           }
         }
       }
+    },
+    "restored": {
+      "routes": {
+        "/ports/P1/windows": {
+          "contentType": "text/html; charset=utf-8",
+          "body": "<!doctype html><html><body><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"W1\", \"source\": \"port\", \"vesselId\": \"IMO-LOCAL-1\", \"vesselName\": \"Local Dawn II\", \"berth\": \"B2\", \"startsAt\": \"2026-11-17T04:00:00Z\", \"endsAt\": \"2026-11-17T06:00:00Z\", \"state\": \"scheduled\", \"modifiedAt\": \"2026-11-16T10:00:00Z\"}</script></body></html>",
+          "etag": "\"restored\""
+        },
+        "/agents/windows": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "sourceWindowId": "A7",
+                "source": "agent",
+                "vesselId": null,
+                "vesselName": "Local Dawn",
+                "berth": "B1",
+                "startsAt": "2026-11-17T01:00:00Z",
+                "endsAt": "2026-11-17T03:00:00Z",
+                "state": "scheduled",
+                "modifiedAt": "2026-11-16T08:00:00Z"
+              }
+            ],
+            "next": null
+          }
+        }
+      }
+    },
+    "delayed": {
+      "routes": {
+        "/ports/P1/windows": {
+          "contentType": "text/html; charset=utf-8",
+          "body": "<!doctype html><html><body><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"W1\", \"source\": \"port\", \"vesselId\": \"IMO-LOCAL-1\", \"vesselName\": \"Local Dawn II\", \"berth\": \"B2\", \"startsAt\": \"2026-11-17T04:00:00Z\", \"endsAt\": \"2026-11-17T06:00:00Z\", \"state\": \"delayed\", \"modifiedAt\": \"2026-11-16T10:30:00Z\"}</script></body></html>",
+          "etag": "\"delayed\""
+        },
+        "/agents/windows": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "sourceWindowId": "A7",
+                "source": "agent",
+                "vesselId": null,
+                "vesselName": "Local Dawn",
+                "berth": "B1",
+                "startsAt": "2026-11-17T01:00:00Z",
+                "endsAt": "2026-11-17T03:00:00Z",
+                "state": "scheduled",
+                "modifiedAt": "2026-11-16T08:00:00Z"
+              }
+            ],
+            "next": null
+          }
+        }
+      }
+    },
+    "mixed": {
+      "routes": {
+        "/ports/P1/windows": {
+          "contentType": "text/html; charset=utf-8",
+          "body": "<!doctype html><html><body><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"W1\", \"source\": \"port\", \"vesselId\": \"IMO-LOCAL-1\", \"vesselName\": \"Local Dawn II\", \"berth\": \"B2\", \"startsAt\": \"2026-11-17T04:00:00Z\", \"endsAt\": \"2026-11-17T06:00:00Z\", \"state\": \"scheduled\", \"modifiedAt\": \"2026-11-16T10:00:00Z\"}</script><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"W2\", \"source\": \"port\", \"vesselId\": \"IMO-LOCAL-2\", \"vesselName\": \"Local Dawn\", \"berth\": \"B2\", \"startsAt\": \"2026-11-17T05:00:00Z\", \"endsAt\": \"2026-11-17T07:00:00Z\", \"state\": \"scheduled\", \"modifiedAt\": \"2026-11-16T10:00:00Z\"}</script><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"W3\", \"source\": \"port\", \"vesselId\": \"IMO-LOCAL-3\", \"vesselName\": \"Same Name\", \"berth\": \"B3\", \"startsAt\": \"2026-11-17T08:00:00Z\", \"endsAt\": \"2026-11-17T09:00:00Z\", \"state\": \"cancelled\", \"modifiedAt\": \"2026-11-16T10:00:00Z\"}</script></body></html>",
+          "etag": "\"mixed-port\""
+        },
+        "/agents/windows": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "sourceWindowId": "A7",
+                "source": "agent",
+                "vesselId": null,
+                "vesselName": "Local Dawn",
+                "berth": "B1",
+                "startsAt": "2026-11-17T01:00:00Z",
+                "endsAt": "2026-11-17T03:00:00Z",
+                "state": "scheduled",
+                "modifiedAt": "2026-11-16T08:00:00Z"
+              },
+              {
+                "sourceWindowId": "A8",
+                "source": "agent",
+                "vesselId": null,
+                "vesselName": "Same Name",
+                "berth": "B4",
+                "startsAt": "2026-11-17T08:30:00Z",
+                "endsAt": "2026-11-17T09:30:00Z",
+                "state": "scheduled",
+                "modifiedAt": "2026-11-16T10:00:00Z"
+              }
+            ],
+            "next": null
+          }
+        }
+      }
+    },
+    "paged": {
+      "routes": {
+        "/ports/P1/windows": {
+          "contentType": "text/html; charset=utf-8",
+          "body": "<!doctype html><html><body><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"W1\", \"source\": \"port\", \"vesselId\": \"IMO-LOCAL-1\", \"vesselName\": \"Local Dawn\", \"berth\": \"B1\", \"startsAt\": \"2026-11-17T00:00:00Z\", \"endsAt\": \"2026-11-17T02:00:00Z\", \"state\": \"scheduled\", \"modifiedAt\": \"2026-11-16T08:00:00Z\"}</script><a rel=\"next\" href=\"/ports/P1/windows?page=2\">next</a></body></html>",
+          "etag": "\"paged-1\""
+        },
+        "/ports/P1/windows?page=2": {
+          "contentType": "text/html; charset=utf-8",
+          "body": "<!doctype html><html><body><script type=\"application/json\" class=\"source-record\">{\"sourceWindowId\": \"W2\", \"source\": \"port\", \"vesselId\": \"IMO-LOCAL-2\", \"vesselName\": \"Local Dawn\", \"berth\": \"B5\", \"startsAt\": \"2026-11-17T02:00:00Z\", \"endsAt\": \"2026-11-17T03:00:00Z\", \"state\": \"scheduled\", \"modifiedAt\": \"2026-11-16T08:00:00Z\"}</script></body></html>",
+          "etag": "\"paged-2\""
+        },
+        "/agents/windows": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "sourceWindowId": "A7",
+                "source": "agent",
+                "vesselId": null,
+                "vesselName": "Local Dawn",
+                "berth": "B1",
+                "startsAt": "2026-11-17T01:00:00Z",
+                "endsAt": "2026-11-17T03:00:00Z",
+                "state": "scheduled",
+                "modifiedAt": "2026-11-16T08:00:00Z"
+              }
+            ],
+            "next": "/agents/windows?page=2"
+          }
+        },
+        "/agents/windows?page=2": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "sourceWindowId": "A9",
+                "source": "agent",
+                "vesselId": null,
+                "vesselName": "Evening Tide",
+                "berth": "B6",
+                "startsAt": "2026-11-17T09:00:00Z",
+                "endsAt": "2026-11-17T10:00:00Z",
+                "state": "scheduled",
+                "modifiedAt": "2026-11-16T08:00:00Z"
+              }
+            ],
+            "next": null
+          }
+        }
+      }
     }
   }
 }

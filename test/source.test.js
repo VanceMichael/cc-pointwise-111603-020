@@ -40,3 +40,31 @@ test('local origin restriction and transient source failures are observable', as
     await assert.rejects(client.read('http://127.0.0.1:1/foreign'), /origin changed/);
   } finally { await source.close(); }
 });
+
+test('collection follows every next link on both sources', async () => {
+  const { collectSource } = await import('../src/collect.js');
+  const source = await startSource(scenarioPath);
+  try {
+    source.publish('paged');
+    const client = new SourceClient(source.url);
+    const port = await collectSource(client, { format: 'port' });
+    const agent = await collectSource(client, { format: 'agent' });
+    assert.equal(port.pages.length, 2);
+    assert.equal(agent.pages.length, 2);
+    assert.deepEqual(port.records.map((record) => record.sourceId), ['W1', 'W2']);
+    assert.deepEqual(agent.records.map((record) => record.sourceId), ['A7', 'A9']);
+    assert.ok(port.records.every((record) => record.source === '港口窗口计划簿'));
+    assert.ok(agent.records.every((record) => record.source === '代理靠泊计划'));
+  } finally { await source.close(); }
+});
+
+test('a failed page aborts the batch instead of looking complete', async () => {
+  const { collectSource } = await import('../src/collect.js');
+  const source = await startSource(scenarioPath);
+  try {
+    source.publish('paged');
+    const client = new SourceClient(source.url);
+    source.failNext('/ports/P1/windows?page=2', 503);
+    await assert.rejects(collectSource(client, { format: 'port' }), /503/);
+  } finally { await source.close(); }
+});

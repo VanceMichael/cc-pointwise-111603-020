@@ -1,11 +1,15 @@
-const fields = ["sourceWindowId", "source", "vesselId", "vesselName", "berth", "startsAt", "endsAt", "state", "modifiedAt"];
+import { buildBoard } from './board.js';
 
-export async function readOperations(repository) {
-  const records = await repository.read();
-  return { product: "港口窗口计划簿", rows: records.map((record) => ({
-    sourceId: record.sourceId,
-    source: record.source,
-    observedAt: record.observedAt,
-    attributes: Object.fromEntries(fields.map((field) => [field, record.attributes[field] ?? null])),
-  })) };
+/**
+ * Business read entry point.
+ *
+ * Default: the current projection.  `asOf`: rebuild the board from the
+ * observations that had been *received* by that moment, so a shift handover
+ * reflects what was known then instead of being replaced by today's page.
+ * `reviews` carries the manual-check prompts; this function never edits or
+ * merges the source plans.
+ */
+export async function readOperations(repository, { asOf } = {}) {
+  const state = await repository.readState();
+  return buildBoard(state.observations, { asOf, links: state.identity });
 }
